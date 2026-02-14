@@ -181,3 +181,59 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(footer);
 
 });
+/*===================INDEX SECCION============================ */
+/*==================hERO=================*/ 
+/* ================= HERO PARALLAX ================= */
+
+const heroContent = document.querySelector(".hero-content");
+
+if(heroContent){
+
+    let ticking = false;
+
+    function heroParallax(){
+
+        const scroll = window.scrollY;
+        heroContent.style.transform = `translateY(${scroll * 0.2}px)`;
+
+        ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+
+        if(!ticking){
+            window.requestAnimationFrame(heroParallax);
+            ticking = true;
+        }
+
+    });
+
+}
+
+/* ================= ANIMACIONES SCROLL ================= */
+
+const fadeElements = document.querySelectorAll(".fade-up");
+
+if(fadeElements.length){
+
+    const observer = new IntersectionObserver((entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                // deja de observar después de animar
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+
+}

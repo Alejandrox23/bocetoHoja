@@ -1,0 +1,106 @@
+/* ===== HERO BASE ===== */
+.hero{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ===== CONTENEDOR VIDEO ===== */
+.hero-media{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* ===== VIDEO ===== */
+.hero-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* ===== OVERLAY ===== */
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    );
+    z-index: 2;
+}
+
+/* ===== CONTENIDO ===== */
+.hero-content{
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1100px;
+    animation: heroFade 1.4s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== TITULOS ===== */
+.hero-title{
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-text{
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 300;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes heroFade{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media(max-width: 991px){
+
+    .hero{
+        min-height: 85vh;
+    }
+
+}
+
+/* Celulares */
+@media(max-width: 576px){
+
+    .hero{
+        min-height: 75vh;
+    }
+
+    .hero-content{
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+}
