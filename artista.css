@@ -1,0 +1,223 @@
+/* ===== ARTIST SECTION ===== */
+.artist-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background: url('img/hoja.jpg') center center/cover no-repeat;
+    padding: 60px 20px;
+}
+
+/* CONTENEDOR FLEX */
+.artist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* FOTO DEL ARTISTA */
+.artist-photo {
+    flex: 1 1 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-photo img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 120, 0.5);
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.artist-photo img:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #25d366;
+}
+
+/* INFO DEL ARTISTA */
+.artist-info {
+    flex: 2 1 400px;
+}
+
+.artist-info h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #00ff88;
+    margin-bottom: 5px;
+}
+
+.artist-info h4 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.artist-info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* REDES SOCIALES */
+.social-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-card {
+    background: rgba(0,0,0,0.5);
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    transition: 0.3s;
+}
+
+.social-card:hover {
+    background: #00ff88;
+    transform: scale(1.05);
+}
+
+.social-card i {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.social-card a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.social-card:hover i,
+.social-card:hover a {
+    color: black;
+}
+
+/* RESPONSIVE */
+@media(max-width: 991px){
+    .artist-container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .artist-info{
+        flex: 1 1 100%;
+    }
+}
+
+/* ===== EXPO CARDS ===== */
+#exposiciones.section {
+    margin-top: 0; /* eliminar margen superior */
+    padding-top: 20px; /* opcional, espacio interno */
+    padding-bottom: 60px;
+}
+
+.expo-card {
+    perspective: 1200px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.expo-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.expo-inner {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,255,136,0.3);
+}
+
+.expo-card:hover .expo-inner {
+    transform: rotateY(180deg);
+}
+
+.expo-front, .expo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.expo-front {
+    background: #111;
+    color: white;
+}
+
+.expo-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.expo-front h5 {
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 0 6px #00c96b;
+}
+
+.expo-back {
+    background: #0a0a0a;
+    color: #00c96b;
+    transform: rotateY(180deg);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.expo-back h6 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}

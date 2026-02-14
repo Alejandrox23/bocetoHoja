@@ -28,14 +28,16 @@ function resizeCanvas(){
     ctx.scale(dpr, dpr);
 
 }
-//==menu
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('.hoja-navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('shrink');  // solo reduce padding y logo
-    } else {
-        nav.classList.remove('shrink'); // vuelve a tamaño normal
-    }
+//======Menu//
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.hoja-navbar');
+        if (window.scrollY > 50) {
+            nav.classList.add('shrink');  // reduce padding y logo
+        } else {
+            nav.classList.remove('shrink'); // vuelve a tamaño normal
+        }
+    });
 });
 /* ===== Clase hoja ===== */
 
@@ -501,6 +503,51 @@ workCards.forEach(card => {
         card.classList.toggle('touch-active');
     });
 });
+//seccion artistas
+document.addEventListener("DOMContentLoaded", () => {
 
+    // Selecciona todas las cards
+    const expoCards = document.querySelectorAll(".expo-card");
+
+    // Intersection Observer para animación al hacer scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    expoCards.forEach(card => observer.observe(card));
+
+    // Efecto flip al pasar el mouse (desktop)
+    expoCards.forEach(card => {
+        const inner = card.querySelector(".expo-inner");
+
+        card.addEventListener("mouseenter", () => {
+            inner.style.transform = "rotateY(180deg)";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            inner.style.transform = "rotateY(0deg)";
+        });
+
+        // Para dispositivos táctiles: click para voltear
+        card.addEventListener("click", () => {
+            if(inner.style.transform === "rotateY(180deg)"){
+                inner.style.transform = "rotateY(0deg)";
+            } else {
+                inner.style.transform = "rotateY(180deg)";
+            }
+        });
+    });
+
+});
+//
+window.addEventListener("resize",()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+});
 
 

@@ -1,5 +1,4 @@
 /* ===== RESET ===== */
-
 *,
 *::before,
 *::after{
@@ -9,29 +8,33 @@
 }
 
 /* ===== VARIABLES GLOBALES ===== */
-
 :root{
     --color-fondo:#000;
     --color-texto:#fff;
 
-    /* Color de hojas (solo RGB) */
     --leaf-color:255,255,255;
+
+    /* Navbar heights */
+    --nav-height-desktop: 90px;
+    --nav-height-tablet: 80px;
+    --nav-height-mobile: 70px;
+
+    /* Colores */
+    --color-principal: #3fa87a;
+    --color-secundario: #4a7fb3;
 }
 
 /* ===== CONFIG GENERAL ===== */
-
 body{
     font-family:'Poppins', sans-serif;
     background:var(--color-fondo);
     color:var(--color-texto);
     overflow-x:hidden;
-
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
 }
 
 /* ===== CANVAS BACKGROUND ===== */
-
 #leafBackground{
     position:fixed;
     inset:0;
@@ -39,18 +42,18 @@ body{
     pointer-events:none;
     display:block;
 }
-/*=========Navbar===============*/
-/* ===== VARIABLES ===== */
-:root {
-    --color-principal: #3fa87a;
-    --color-secundario: #4a7fb3;
 
-    /* Altura aproximada del navbar para restar al hero */
-    --nav-height-desktop: 90px;
-    --nav-height-tablet: 80px;
-    --nav-height-mobile: 70px;
+/* ===== MAIN PARA QUE NO SE META EL NAVBAR ===== */
+main {
+    padding-top: var(--nav-height-desktop);
 }
 
+@media(max-width:991px){
+    main { padding-top: var(--nav-height-tablet); }
+}
+@media(max-width:576px){
+    main { padding-top: var(--nav-height-mobile); }
+}
 
 /* ===== NAVBAR BASE ===== */
 .hoja-navbar{
@@ -60,7 +63,7 @@ body{
     width: 100%;
     background: #000;
     padding: clamp(14px, 2vw, 22px) 0;
-    z-index: 999;         /* siempre encima del contenido */
+    z-index: 999;         
     transition: 0.4s ease, transform 0.4s ease;
 }
 
@@ -76,7 +79,6 @@ body{
     height: clamp(38px, 4vw, 50px);
     transition: 0.4s;
 }
-
 .hoja-navbar.shrink .hoja-logo img{
     height: clamp(32px, 3.5vw, 38px);
 }
@@ -120,7 +122,6 @@ body{
     border: 1px solid #111;
     border-radius: 8px;
 }
-
 .hoja-dropdown .dropdown-item{
     color: white;
     transition: 0.3s;
@@ -128,7 +129,6 @@ body{
     align-items: center;
     gap: 8px;
 }
-
 .hoja-dropdown .dropdown-item:hover{
     background: #0a0a0a;
     color: var(--color-principal);
@@ -146,31 +146,26 @@ body{
     gap: 6px;
     transition: 0.3s;
 }
-
 .login-btn:hover{
     border-color: var(--color-principal);
     color: var(--color-principal);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE NAVBAR ===== */
 @media(max-width:991px){
-
     .hoja-menu{
         text-align: center;
         margin-top: 20px;
     }
-
     .hoja-menu .nav-link{
         justify-content: center;
         margin: 12px 0;
     }
-
     .login-btn{
         margin-top: 15px;
         width: 100%;
         justify-content: center;
     }
-
 }
 
 /* ===== CONTENIDO PRINCIPAL ===== */
