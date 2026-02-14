@@ -182,8 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /*===================INDEX SECCION============================ */
-/*==================hERO=================*/ 
-/* ================= HERO PARALLAX ================= */
+
+/* ================= HERO ================= */
 
 const heroContent = document.querySelector(".hero-content");
 
@@ -237,3 +237,71 @@ if(fadeElements.length){
     fadeElements.forEach(el => observer.observe(el));
 
 }
+/* ================= SObre nosotros ================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================================
+       ANIMACION SCROLL (Fade Up)
+    ========================================= */
+
+    const fadeElements = document.querySelectorAll(".fade-up");
+
+    if (fadeElements.length > 0) {
+
+        const observer = new IntersectionObserver((entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    obs.unobserve(entry.target);
+                }
+
+            });
+
+        }, { threshold: 0.2 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    }
+
+
+
+    /* =========================================
+       EFECTO 3D CARDS SOLO DESKTOP
+    ========================================= */
+
+    const isTouchDevice = window.matchMedia("(hover: none)").matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!isTouchDevice && !prefersReducedMotion) {
+
+        const cards = document.querySelectorAll(".about-card");
+
+        cards.forEach(card => {
+
+            card.addEventListener("mousemove", e => {
+
+                const rect = card.getBoundingClientRect();
+
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const rotateX = -(y - rect.height / 2) / 18;
+                const rotateY = (x - rect.width / 2) / 18;
+
+                card.style.transform =
+                    `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+
+            });
+
+            card.addEventListener("mouseleave", () => {
+
+                card.style.transform =
+                    "rotateX(0deg) rotateY(0deg) translateY(0)";
+
+            });
+
+        });
+    }
+
+});
