@@ -1,0 +1,41 @@
+/* ===== RESET ===== */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+/* ===== VARIABLES GLOBALES ===== */
+
+:root{
+    --color-fondo:#000;
+    --color-texto:#fff;
+
+    /* Color de hojas (solo RGB) */
+    --leaf-color:255,255,255;
+}
+
+/* ===== CONFIG GENERAL ===== */
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:var(--color-fondo);
+    color:var(--color-texto);
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* ===== CANVAS BACKGROUND ===== */
+
+#leafBackground{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    display:block;
+}
