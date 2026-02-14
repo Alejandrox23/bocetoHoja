@@ -1,4 +1,4 @@
-/* ===== ARTIST SECTION CORREGIDA ===== */
+/* ===== ARTIST SECTION CORREGIDA 100% RESPONSIVE ===== */
 .artist-section {
     position: relative;
     display: flex;
@@ -6,8 +6,7 @@
     color: white;
     font-family: 'Montserrat', sans-serif;
     background: url('img/hoja.jpg') center center/cover no-repeat;
-    /* padding top dinámico según altura del navbar */
-    padding-top: calc(var(--nav-height-desktop, 90px) + 60px);
+    padding-top: calc(var(--nav-height-desktop, 90px) + 60px); /* espacio navbar + extra */
     padding-bottom: 60px;
     z-index: 1;
 }
@@ -20,6 +19,7 @@
     max-width: 1200px;
     width: 100%;
     z-index: 2;
+    align-items: flex-start; /* alineamos al top para que el texto no quede centrado verticalmente */
 }
 
 /* FOTO DEL ARTISTA */
@@ -134,18 +134,15 @@
 
 /* ===== RESPONSIVE ===== */
 
-/* Tablets y móviles grandes */
+/* Tablets grandes */
 @media(max-width: 991px){
     .artist-section {
         padding-top: calc(var(--nav-height-tablet, 80px) + 40px);
     }
     .artist-container {
-        flex-direction: column;
+        flex-direction: column; /* se apilan verticalmente */
         align-items: center;
         text-align: center;
-    }
-    .artist-info {
-        flex: 1 1 100%;
     }
     .artist-photo img {
         width: 200px;
