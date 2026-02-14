@@ -370,3 +370,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+/*================Expo*/ 
+// ================= EXPOSICIONES JS =================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const expoCards = document.querySelectorAll(".expo-card");
+
+    expoCards.forEach(card => {
+
+        // Solo agregar flip por click si la pantalla es táctil / no hover
+        const isTouch = matchMedia("(hover: none)").matches;
+
+        if (isTouch) {
+            card.addEventListener("click", () => {
+                card.querySelector(".expo-inner").classList.toggle("flip");
+            });
+        }
+    });
+
+});
