@@ -305,3 +305,68 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+/*====================Equipo==========================*/
+// ================= EQUIPO =================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ===== SCROLL ANIMATION ===== */
+
+    const faders = document.querySelectorAll(".fade-up");
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target); // optimiza rendimiento
+                }
+            });
+
+        }, { threshold: 0.2 });
+
+        faders.forEach(el => observer.observe(el));
+
+    } else {
+        faders.forEach(el => el.classList.add("show"));
+    }
+
+
+
+    /* ===== MOVIMIENTO 3D TARJETAS ===== */
+
+    // Desactivar en pantallas táctiles
+    if (window.innerWidth > 768) {
+
+        const cards = document.querySelectorAll(".team-card, .team-main-card");
+
+        cards.forEach(card => {
+
+            card.addEventListener("mousemove", e => {
+
+                const rect = card.getBoundingClientRect();
+
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const rotateX = -(y - rect.height / 2) / 25;
+                const rotateY = (x - rect.width / 2) / 25;
+
+                card.style.transform =
+                    `perspective(800px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-12px)`;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "";
+            });
+
+        });
+
+    }
+
+});

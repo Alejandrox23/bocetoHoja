@@ -324,3 +324,262 @@
     }
 
 }
+/*=================Equipo==========================*/
+/* ================= VARIABLES ================= */
+
+:root{
+--verde:#00ff88;
+--celeste:#00d9ff;
+}
+
+
+/* ================= SECCION ================= */
+
+.team-section{
+padding:90px 0;
+color:white;
+text-align:center;
+}
+
+.team-title{
+margin-bottom:55px;
+font-family:'Montserrat', sans-serif;
+letter-spacing:2px;
+}
+
+
+/* ================= WRAPPER PRINCIPALES ================= */
+
+.team-main-wrapper{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+margin-bottom:70px;
+}
+
+
+/* ================= TARJETAS PRINCIPALES ================= */
+
+.team-main-card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(0,255,136,0.25);
+padding:35px 30px;
+max-width:420px;
+width:100%;
+transition:0.5s;
+backdrop-filter:blur(6px);
+position:relative;
+overflow:hidden;
+transform:scale(1.03);
+}
+
+.team-main-card:hover{
+transform:translateY(-12px) scale(1.04);
+box-shadow:
+0 0 25px var(--verde),
+0 0 45px var(--celeste);
+}
+
+
+/* ================= TARJETAS SECUNDARIAS ================= */
+
+.team-card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.1);
+padding:25px 18px;
+transition:0.5s;
+backdrop-filter:blur(6px);
+height:100%;
+position:relative;
+overflow:hidden;
+}
+
+.team-card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 0 18px var(--verde),
+0 0 35px var(--celeste);
+border-color:var(--verde);
+}
+
+
+/* ================= IMAGEN PERFIL ================= */
+
+.team-img{
+width:110px;
+height:110px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+border:2px solid rgba(0,255,136,0.35);
+transition:0.4s;
+}
+
+/* Imagen más grande en principales */
+.team-main-card .team-img{
+width:150px;
+height:150px;
+}
+
+
+/* Glow imagen */
+
+.team-card:hover .team-img,
+.team-main-card:hover .team-img{
+box-shadow:
+0 0 15px var(--verde),
+0 0 30px var(--celeste);
+}
+
+
+/* ================= TEXTOS ================= */
+
+.team-main-card h4{
+font-size:1.4rem;
+margin-top:10px;
+}
+
+.team-card h5{
+font-size:1.1rem;
+margin-top:8px;
+}
+
+.team-role{
+display:block;
+font-size:0.85rem;
+opacity:0.75;
+margin-bottom:12px;
+color:var(--celeste);
+}
+
+
+/* ================= BOTONES ================= */
+
+.team-buttons{
+margin-top:18px;
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.team-btn{
+border:1px solid rgba(0,255,136,0.5);
+padding:6px 18px;
+text-decoration:none;
+color:white;
+font-size:0.8rem;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.team-btn:hover{
+border-color:var(--celeste);
+box-shadow:
+0 0 12px var(--verde),
+0 0 25px var(--celeste);
+}
+
+
+/* ================= GRID SECUNDARIO ================= */
+
+.team-secondary{
+margin-top:20px;
+}
+
+
+/* ================= ANIMACION SCROLL ================= */
+
+.fade-up{
+opacity:0;
+transform:translateY(50px);
+transition:0.9s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+/* ===== Laptop / Tablet horizontal ===== */
+@media(max-width:1200px){
+
+.team-main-wrapper{
+gap:35px;
+}
+
+.team-main-card{
+max-width:380px;
+}
+
+}
+
+
+/* ===== Tablet ===== */
+@media(max-width:991px){
+
+.team-section{
+padding:75px 0;
+}
+
+.team-main-wrapper{
+flex-direction:column;
+align-items:center;
+gap:35px;
+}
+
+.team-main-card{
+max-width:520px;
+}
+
+}
+
+
+/* ===== Celular grande ===== */
+@media(max-width:768px){
+
+.team-img{
+width:100px;
+height:100px;
+}
+
+.team-main-card .team-img{
+width:130px;
+height:130px;
+}
+
+.team-title{
+font-size:1.8rem;
+}
+
+}
+
+
+/* ===== Celular pequeño ===== */
+@media(max-width:480px){
+
+.team-section{
+padding:60px 0;
+}
+
+.team-main-card{
+padding:28px 20px;
+}
+
+.team-card{
+padding:22px 15px;
+}
+
+.team-btn{
+width:100%;
+text-align:center;
+}
+
+}
