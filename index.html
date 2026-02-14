@@ -32,12 +32,141 @@
 
 <!-- Lordicon -->
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<!-- Font Awesome (Opcional) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body>
 
 <!-- ===== BACKGROUND GLOBAL ===== -->
 <canvas id="leafBackground"></canvas>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+
+<nav class="navbar navbar-expand-lg hoja-navbar fixed-top">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand hoja-logo" href="#">
+      <img src="img/hoja.jpeg" alt="HOJA">
+    </a>
+
+    <!-- Botón móvil -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHoja">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarHoja">
+
+      <ul class="navbar-nav hoja-menu">
+
+        <!-- Inicio -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+
+            <lord-icon
+              src="https://cdn.lordicon.com/wmwqvixz.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style="width:18px;height:18px">
+            </lord-icon>
+
+            Inicio
+          </a>
+        </li>
+
+        <!-- Exposición -->
+        <li class="nav-item">
+          <a class="nav-link" href="exposicion.html">
+
+            <lord-icon
+              src="https://cdn.lordicon.com/lltgvngb.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style="width:18px;height:18px">
+            </lord-icon>
+
+            Exposición
+          </a>
+        </li>
+
+        <!-- Equipo -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+
+            <lord-icon
+              src="https://cdn.lordicon.com/hrjifpbq.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style="width:18px;height:18px">
+            </lord-icon>
+
+            Equipo
+          </a>
+
+          <ul class="dropdown-menu hoja-dropdown">
+            <li><a class="dropdown-item" href="israel.html"><i class="fa-solid fa-user"></i> Israel Cambal</a></li>
+            <li><a class="dropdown-item" href="cristina.html"><i class="fa-solid fa-user"></i> Cristina Luna</a></li>
+            <li><a class="dropdown-item" href="stefany.html"><i class="fa-solid fa-user"></i> Stefany Satama</a></li>
+            <li><a class="dropdown-item" href="robert.html"><i class="fa-solid fa-user"></i> Roberth Tambo</a></li>
+            <li><a class="dropdown-item" href="wilmer.html"><i class="fa-solid fa-user"></i> Wilmer Ramirez</a></li>
+          </ul>
+        </li>
+
+        <!-- Tienda -->
+        <li class="nav-item">
+          <a class="nav-link" href="tienda.html">
+
+            <lord-icon
+              src="https://cdn.lordicon.com/ggihhudh.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style="width:18px;height:18px">
+            </lord-icon>
+
+            Tienda
+          </a>
+        </li>
+
+        <!-- Contacto -->
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">
+
+            <lord-icon
+              src="https://cdn.lordicon.com/rsvfayfn.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style="width:18px;height:18px">
+            </lord-icon>
+
+            Contacto
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Login -->
+    <button class="login-btn">
+
+      <lord-icon
+        src="https://cdn.lordicon.com/dxjqoygy.json"
+        trigger="hover"
+        colors="primary:#ffffff"
+        style="width:20px;height:20px">
+      </lord-icon>
+
+      Login
+    </button>
+
+  </div>
+</nav>
+
+</header>
+
 
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

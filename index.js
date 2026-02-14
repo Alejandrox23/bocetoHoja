@@ -105,19 +105,33 @@ function animate(){
 
 /* ===== Navbar scroll seguro ===== */
 
+let lastScroll = 0;
+
 window.addEventListener("scroll", () => {
 
     const navbar = document.querySelector(".hoja-navbar");
-
     if(!navbar) return;
 
-    if(window.scrollY > 60){
+    let currentScroll = window.scrollY;
+
+    /* Shrink clásico */
+    if(currentScroll > 60){
         navbar.classList.add("shrink");
     }else{
         navbar.classList.remove("shrink");
     }
 
+    /* Navbar dinámico ocultar / mostrar */
+    if(currentScroll > lastScroll && currentScroll > 120){
+        navbar.classList.add("nav-hide");
+    }else{
+        navbar.classList.remove("nav-hide");
+    }
+
+    lastScroll = currentScroll;
+
 });
+
 
 /* ===== Resize optimizado ===== */
 
