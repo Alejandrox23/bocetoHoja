@@ -41,151 +41,140 @@ body{
 }
 /*=========Navbar===============*/
 /* ===== VARIABLES ===== */
+:root {
+    --color-principal: #3fa87a;
+    --color-secundario: #4a7fb3;
 
-:root{
-    --color-principal:#3fa87a;   /* Verde suave */
-    --color-secundario:#4a7fb3;  /* Azul suave */
+    /* Altura aproximada del navbar para restar al hero */
+    --nav-height-desktop: 90px;
+    --nav-height-tablet: 80px;
+    --nav-height-mobile: 70px;
 }
 
-/* ===== NAVBAR BASE ===== */
 
+/* ===== NAVBAR BASE ===== */
 .hoja-navbar{
-    background:#000;
-    padding:clamp(14px, 2vw, 22px) 0;
-    transition:0.4s ease;
+    position: fixed;      /* fijo arriba */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    padding: clamp(14px, 2vw, 22px) 0;
+    z-index: 999;         /* siempre encima del contenido */
+    transition: 0.4s ease, transform 0.4s ease;
 }
 
 /* Navbar reducido al scroll */
 .hoja-navbar.shrink{
-    padding:10px 0;
-    background:rgba(0,0,0,0.85);
+    padding: 10px 0;
+    background: rgba(0,0,0,0.85);
     backdrop-filter: blur(8px);
 }
 
 /* ===== LOGO ===== */
-
 .hoja-logo img{
-    height:clamp(38px, 4vw, 50px);
-    transition:0.4s;
+    height: clamp(38px, 4vw, 50px);
+    transition: 0.4s;
 }
 
 .hoja-navbar.shrink .hoja-logo img{
-    height:clamp(32px, 3.5vw, 38px);
+    height: clamp(32px, 3.5vw, 38px);
 }
 
 /* ===== MENU ===== */
-
 .hoja-menu .nav-link{
-    color:white !important;
-    margin:0 clamp(10px, 1.5vw, 20px);
-    font-weight:500;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    transition:0.3s;
-    position:relative;
+    color: white !important;
+    margin: 0 clamp(10px, 1.5vw, 20px);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    position: relative;
 }
 
 /* Hover elegante */
 .hoja-menu .nav-link:hover{
-    color:var(--color-principal) !important;
+    color: var(--color-principal) !important;
 }
 
 /* Subrayado minimal */
 .hoja-menu .nav-link::after{
     content:"";
-    position:absolute;
-    width:0%;
-    height:1px;
-    background:var(--color-principal);
-    bottom:-5px;
-    left:0;
-    transition:0.3s;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background: var(--color-principal);
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
 }
 
 .hoja-menu .nav-link:hover::after{
-    width:100%;
+    width: 100%;
 }
 
 /* ===== DROPDOWN ===== */
-
 .hoja-dropdown{
-    background:#000;
-    border:1px solid #111;
-    border-radius:8px;
+    background: #000;
+    border: 1px solid #111;
+    border-radius: 8px;
 }
 
 .hoja-dropdown .dropdown-item{
-    color:white;
-    transition:0.3s;
-    display:flex;
-    align-items:center;
-    gap:8px;
+    color: white;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .hoja-dropdown .dropdown-item:hover{
-    background:#0a0a0a;
-    color:var(--color-principal);
+    background: #0a0a0a;
+    color: var(--color-principal);
 }
 
 /* ===== LOGIN ===== */
-
 .login-btn{
-    border:1px solid white;
-    background:transparent;
-    color:white;
-    padding:6px 18px;
-    border-radius:25px;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    transition:0.3s;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
 }
 
 .login-btn:hover{
-    border-color:var(--color-principal);
-    color:var(--color-principal);
-}
-/* Ocultar navbar al bajar */
-
-.nav-hide{
-    transform:translateY(-100%);
-    transition:0.4s ease;
-}
-
-.hoja-navbar{
-    transition:0.4s ease, transform 0.4s ease;
+    border-color: var(--color-principal);
+    color: var(--color-principal);
 }
 
 /* ===== RESPONSIVE ===== */
-
 @media(max-width:991px){
 
     .hoja-menu{
-        text-align:center;
-        margin-top:20px;
+        text-align: center;
+        margin-top: 20px;
     }
 
     .hoja-menu .nav-link{
-        justify-content:center;
-        margin:12px 0;
+        justify-content: center;
+        margin: 12px 0;
     }
 
     .login-btn{
-        margin-top:15px;
-        width:100%;
-        justify-content:center;
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
     }
 
 }
 
 /* ===== CONTENIDO PRINCIPAL ===== */
 
-main {
-    flex: 1;
-}
-/*========= FOOTER =============*/ 
-/* ================= FOOTER BASE ================= */
 
 .footer-hoja{
     background: rgba(0,0,0,0.92);

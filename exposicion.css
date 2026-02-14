@@ -1,0 +1,352 @@
+/* ===== HERO BASE ===== */
+.hero{
+    position: relative;
+    min-height: 100vh; /* altura completa de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px; /* espacio para navbar fijo */
+    box-sizing: border-box;
+}
+
+/* ===== CONTENEDOR VIDEO ===== */
+.hero-media{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* ===== VIDEO ===== */
+.hero-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* ===== OVERLAY ===== */
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    );
+    z-index: 2;
+}
+
+/* ===== CONTENIDO ===== */
+.hero-content{
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1100px;
+    animation: heroFade 1.4s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== TITULOS ===== */
+.hero-title{
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle{
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.hero-description{
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    opacity: 0.8;
+    max-width: 700px;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes heroFade{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media(max-width: 991px){
+    .hero{
+        min-height: 85vh;
+        padding-top: 70px;
+    }
+    .hero-title{
+        font-size: clamp(1.8rem, 6vw, 2.8rem);
+    }
+    .hero-subtitle{
+        font-size: clamp(0.95rem, 3vw, 1.3rem);
+    }
+    .hero-description{
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
+    }
+}
+
+/* Celulares */
+@media(max-width: 576px){
+    .hero{
+        min-height: 75vh;
+        padding-top: 60px;
+    }
+    .hero-content{
+        padding: 0 15px;
+        gap: 10px;
+    }
+    .hero-title{
+        font-size: clamp(1.5rem, 7vw, 2.2rem);
+    }
+    .hero-subtitle{
+        font-size: clamp(0.85rem, 4vw, 1.1rem);
+    }
+    .hero-description{
+        font-size: clamp(0.8rem, 3.5vw, 0.95rem);
+    }
+}
+/* ===== SOBRE NOSOTROS ===== */
+.about-us-section{
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.about-us-section .section-title{
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about-us-section .section-subtitle{
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* ===== CARD BASE ===== */
+.about-card{
+    background: rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:30px;
+    backdrop-filter: blur(5px);
+    transition:0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.about-card:hover{
+    transform: translateY(-8px);
+    box-shadow:0 0 15px rgba(0,255,136,0.4);
+}
+
+/* ===== CARD FUNDADORES ===== */
+.founders-card{
+    padding: 40px 20px;
+}
+
+.founders-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.founder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.founder img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,0.3);
+}
+
+.founders-description{
+    max-width: 800px;
+    margin-top: 20px;
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* Títulos y párrafos */
+.about-card h4{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.about-card p{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ================= ANIMACIÓN SCROLL ================= */
+.fade-up{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:991px){
+    .about-us-section .section-title{
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+    .about-us-section .section-subtitle{
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+    .founder img{
+        width:100px;
+        height:100px;
+    }
+}
+
+@media(max-width:576px){
+    .about-us-section{
+        padding: 60px 15px;
+    }
+    .about-us-section .section-title{
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+    .about-us-section .section-subtitle{
+        font-size: clamp(0.8rem, 4vw, 0.9rem);
+    }
+    .founders-list{
+        gap:15px;
+    }
+    .founder img{
+        width:80px;
+        height:80px;
+    }
+}
+/* ===== SECCIÓN OBRAS ===== */
+.works-section{
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+.works-section .section-title{
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.works-section .section-subtitle{
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* ===== CARD OBRA ===== */
+.work-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.work-card:hover{
+    transform: translateY(-5px);
+}
+
+.work-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+/* ===== OVERLAY ===== */
+.work-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.work-card:hover .work-overlay,
+.work-card.touch-active .work-overlay{
+    opacity: 1;
+}
+
+.work-card:hover .work-img,
+.work-card.touch-active .work-img{
+    filter: blur(2px) brightness(0.7);
+}
+
+/* Títulos y párrafos overlay */
+.work-overlay h4{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.work-overlay p{
+    font-size: 0.9rem;
+    margin: 2px 0;
+    opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:991px){
+    .work-img{
+        height: 250px;
+    }
+}
+
+@media(max-width:576px){
+    .work-img{
+        height: 200px;
+    }
+}

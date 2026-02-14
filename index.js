@@ -28,7 +28,15 @@ function resizeCanvas(){
     ctx.scale(dpr, dpr);
 
 }
-
+//==menu
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.hoja-navbar');
+    if (window.scrollY > 50) {
+        nav.classList.add('shrink');  // solo reduce padding y logo
+    } else {
+        nav.classList.remove('shrink'); // vuelve a tamaño normal
+    }
+});
 /* ===== Clase hoja ===== */
 
 class Leaf{
@@ -455,3 +463,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+//============================================HTML CORRESPOINDIENTE A EXPOSICIONES================================================================
+/// Animación scroll para cards
+document.addEventListener("DOMContentLoaded", () => {
+    const faders = document.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    faders.forEach(el => observer.observe(el));
+});
+// Animación Fade Up para Sobre Nosotros
+const fadeCards = document.querySelectorAll(".fade-up");
+
+if(fadeCards.length){
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    fadeCards.forEach(el => observer.observe(el));
+}
+// Detectar touch para overlay en móviles
+const workCards = document.querySelectorAll('.work-card');
+
+workCards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('touch-active');
+    });
+});
+
+
+

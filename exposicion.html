@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="artista.css">
+<link rel="stylesheet" href="exposicion.css">
 <link rel="stylesheet" href="diseño.css">
 
 <!-- Lordicon -->
@@ -168,8 +168,140 @@
 </header>
 
 <main>
-    <!-- TODO tu contenido de la página -->
+ <!-- ================= HERO ================= -->
+<section id="hero" class="hero">
+
+  <!-- Video de fondo -->
+  <div class="hero-media">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="img/logo_pintado_brocha_lienzo_completo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Contenido Hero -->
+  <div class="hero-content container text-center">
+    <h1 class="hero-title">COLECTIVO HOJA</h1>
+    <h2 class="hero-subtitle">Fundado en 2020 · Loja, Ecuador</h2>
+    <p class="hero-description">
+      Somos un colectivo dedicado al arte contemporáneo y la cultura visual. 
+      Impulsamos proyectos colaborativos, exposiciones y talleres que fortalecen la identidad cultural.
+    </p>
+  </div>
+
+</section>
+<section id="about-us" class="about-us-section">
+    <div class="container text-center">
+
+        <!-- Título general -->
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <p class="section-subtitle">Conoce nuestro colectivo y nuestra filosofía</p>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- CARD FUNDADORES (PRIORIDAD) -->
+            <div class="col-12 fade-up">
+                <div class="about-card founders-card">
+                    <h4>Fundadores</h4>
+                    <div class="founders-list">
+                        <div class="founder">
+                            <img src="img/israel.jpeg" alt="Israel Cambal">
+                            <p><strong>Israel Cambal</strong></p>
+                        </div>
+                        <div class="founder">
+                            <img src="img/cristina.jpeg" alt="Cristina Luna">
+                            <p><strong>Cristina Luna</strong></p>
+                        </div>
+                    </div>
+                    <p class="founders-description">
+                        Fundado por Israel y Cristina, el colectivo HOJA promueve la identidad cultural a 
+                        través del arte contemporáneo y la colaboración interdisciplinaria, fortaleciendo la 
+                        creatividad y la proyección artística de nuevos talentos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARDS SECUNDARIAS: Misión, Visión, Valores -->
+            <div class="col-md-4 col-sm-6 fade-up">
+                <div class="about-card">
+                    <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="hover" colors="primary:#00ff88" style="width:60px;height:60px"></lord-icon>
+                    <h4>Misión</h4>
+                    <p>Impulsar la creatividad y colaboración artística para fortalecer la identidad cultural.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 fade-up">
+                <div class="about-card">
+                    <lord-icon src="https://cdn.lordicon.com/ylvuooxd.json" trigger="hover" colors="primary:#00ff88" style="width:60px;height:60px"></lord-icon>
+                    <h4>Visión</h4>
+                    <p>Ser un referente cultural en Ecuador y Latinoamérica, promoviendo artistas emergentes.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 fade-up">
+                <div class="about-card">
+                    <lord-icon src="https://cdn.lordicon.com/wloilxuq.json" trigger="hover" colors="primary:#00ff88" style="width:60px;height:60px"></lord-icon>
+                    <h4>Valores</h4>
+                    <p>Colaboración, respeto, innovación, proyección artística y compromiso cultural.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="works" class="works-section">
+    <div class="container text-center">
+
+        <h2 class="section-title">Obras y Galardones</h2>
+        <p class="section-subtitle">Explora algunas de nuestras obras destacadas y premios obtenidos</p>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- OBRA 1 -->
+            <div class="col-md-4 col-sm-6 fade-up">
+                <div class="work-card">
+                    <img src="img/obra1.jpeg" alt="Obra 1" class="work-img">
+                    <div class="work-overlay">
+                        <h4>Nombre de la Obra 1</h4>
+                        <p><strong>Fecha:</strong> 2023</p>
+                        <p><strong>Colaboradores:</strong> Israel Cambal, Cristina Luna</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OBRA 2 -->
+            <div class="col-md-4 col-sm-6 fade-up">
+                <div class="work-card">
+                    <img src="img/obra2.jpeg" alt="Obra 2" class="work-img">
+                    <div class="work-overlay">
+                        <h4>Nombre de la Obra 2</h4>
+                        <p><strong>Fecha:</strong> 2022</p>
+                        <p><strong>Colaboradores:</strong> Israel Cambal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OBRA 3 -->
+            <div class="col-md-4 col-sm-6 fade-up">
+                <div class="work-card">
+                    <img src="img/obra3.jpeg" alt="Obra 3" class="work-img">
+                    <div class="work-overlay">
+                        <h4>Nombre de la Obra 3</h4>
+                        <p><strong>Fecha:</strong> 2021</p>
+                        <p><strong>Colaboradores:</strong> Cristina Luna</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 </main>
+
 
 
 
