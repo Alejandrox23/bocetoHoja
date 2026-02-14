@@ -6,7 +6,9 @@
     color: white;
     font-family: 'Montserrat', sans-serif;
     background: url('img/hoja.jpg') center center/cover no-repeat;
-    padding: 120px 20px 60px 20px; /* top aumentado para navbar fijo */
+    /* padding top dinámico según altura del navbar */
+    padding-top: calc(var(--nav-height-desktop, 90px) + 60px);
+    padding-bottom: 60px;
     z-index: 1;
 }
 
@@ -130,10 +132,13 @@
     color: black;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 
 /* Tablets y móviles grandes */
 @media(max-width: 991px){
+    .artist-section {
+        padding-top: calc(var(--nav-height-tablet, 80px) + 40px);
+    }
     .artist-container {
         flex-direction: column;
         align-items: center;
@@ -151,7 +156,7 @@
 /* Móviles pequeños */
 @media(max-width: 576px){
     .artist-section {
-        padding-top: 100px;
+        padding-top: calc(var(--nav-height-mobile, 70px) + 30px);
         padding-bottom: 40px;
     }
     .artist-photo img {
@@ -175,7 +180,6 @@
         font-size: 22px;
     }
 }
-
 
 /* ===== EXPO CARDS CORREGIDO ===== */
 #exposiciones.section {
