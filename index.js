@@ -155,3 +155,29 @@ window.addEventListener("resize", () => {
 resizeCanvas();
 init();
 animate();
+/*=========FOOOTER======*/ 
+/* ================= FOOTER ANIMACION ================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const footer = document.querySelector(".footer-hoja");
+
+    if(!footer) return;
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+                footer.classList.add("show");
+            }
+
+        });
+
+    },{
+        threshold: 0.2
+    });
+
+    observer.observe(footer);
+
+});

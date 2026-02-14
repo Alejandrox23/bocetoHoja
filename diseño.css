@@ -178,3 +178,149 @@ body{
     }
 
 }
+/*========= FOOTER =============*/ 
+/* ================= FOOTER BASE ================= */
+
+.footer-hoja{
+    background: rgba(0,0,0,0.92);
+    border-top: 1px solid rgba(90,180,255,0.25);
+    padding: clamp(35px, 4vw, 55px) 20px 18px;
+    color: white;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+}
+
+/* ===== TITULOS ===== */
+
+.footer-title{
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+
+/* ===== LINKS REDES ===== */
+
+.footer-links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li{
+    margin-bottom: 8px;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.85;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover{
+    color: #7ec8ff;
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.footer-links i{
+    font-size: clamp(16px, 1.3vw, 18px);
+}
+
+/* ===== TEXTO CENTRAL ===== */
+
+.footer-text{
+    opacity: 0.85;
+    line-height: 1.5;
+    max-width: 280px;
+}
+
+/* ===== DESARROLLADOR ===== */
+
+.footer-dev-text{
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.dev-logo{
+    width: clamp(60px, 7vw, 80px);
+    opacity: 0.85;
+    transition: 0.4s ease;
+}
+
+.dev-logo:hover{
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ===== BARRA INFERIOR ===== */
+
+.footer-bottom{
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 25px;
+    padding-top: 12px;
+    font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+    opacity: 0.6;
+}
+
+/* ================= ANIMACION ================= */
+
+.footer-col{
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 0.7s ease;
+}
+
+.footer-hoja.show .footer-col{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+
+@media(max-width:991px){
+
+    .footer-hoja{
+        text-align:center;
+    }
+
+    .footer-text{
+        margin:auto;
+    }
+
+    .footer-links a{
+        justify-content:center;
+    }
+
+}
+
+/* Celulares */
+
+@media(max-width:576px){
+
+    .footer-links li{
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom{
+        font-size: 0.75rem;
+    }
+
+}
+
+/* Pantallas gigantes */
+
+@media(min-width:1600px){
+
+    .footer-hoja{
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+}
+
