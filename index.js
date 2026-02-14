@@ -389,3 +389,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+/*==================TIEDA=============== */
+// TIENDA HOJA
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ===== SCROLL ANIMATION ===== */
+    const faders = document.querySelectorAll(".fade-up");
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        faders.forEach(el => observer.observe(el));
+    } else {
+        // Fallback si el navegador no soporta
+        faders.forEach(el => el.classList.add("show"));
+    }
+
+    /* ===== BOTONES COMPRAR ===== */
+    const phoneNumber = "5930994844376"; // CAMBIA POR TU NUMERO
+    const buyButtons = document.querySelectorAll(".buy-btn");
+
+    buyButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const product = button.getAttribute("data-product");
+            const message = `Hola, estoy interesado en comprar: ${product} del Colectivo HOJA`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        });
+    });
+
+});
+/**/
+// ================= CONTACTO =================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contactoCards = document.querySelectorAll(".contacto-card");
+
+    // Inicializar estado oculto
+    contactoCards.forEach(card => {
+        card.classList.add("fade-up");
+    });
+
+    // Intersection Observer para animación scroll
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        contactoCards.forEach(card => observer.observe(card));
+
+    } else {
+        // Fallback para navegadores antiguos
+        contactoCards.forEach(card => card.classList.add("show"));
+    }
+
+});
