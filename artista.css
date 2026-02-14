@@ -1,4 +1,4 @@
-/* ===== ARTIST SECTION ===== */
+/* ===== ARTIST SECTION CORREGIDA ===== */
 .artist-section {
     position: relative;
     display: flex;
@@ -6,7 +6,8 @@
     color: white;
     font-family: 'Montserrat', sans-serif;
     background: url('img/hoja.jpg') center center/cover no-repeat;
-    padding: 60px 20px;
+    padding: 120px 20px 60px 20px; /* top aumentado para navbar fijo */
+    z-index: 1;
 }
 
 /* CONTENEDOR FLEX */
@@ -42,9 +43,11 @@
     transform: scale(1.05);
 }
 
+/* BOTÓN WHATSAPP */
 .whatsapp-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     padding: 10px 20px;
     border-radius: 25px;
@@ -66,20 +69,20 @@
 }
 
 .artist-info h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     letter-spacing: 2px;
     color: #00ff88;
     margin-bottom: 5px;
 }
 
 .artist-info h4 {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 400;
     margin-bottom: 15px;
 }
 
 .artist-info p {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     margin-bottom: 10px;
     line-height: 1.5;
 }
@@ -87,6 +90,8 @@
 /* REDES SOCIALES */
 .social-cards {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
     margin-top: 20px;
 }
@@ -126,24 +131,60 @@
 }
 
 /* RESPONSIVE */
+
+/* Tablets y móviles grandes */
 @media(max-width: 991px){
-    .artist-container{
+    .artist-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    .artist-info{
+    .artist-info {
         flex: 1 1 100%;
+    }
+    .artist-photo img {
+        width: 200px;
+        height: 260px;
     }
 }
 
-/* ===== EXPO CARDS ===== */
+/* Móviles pequeños */
+@media(max-width: 576px){
+    .artist-section {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    .artist-photo img {
+        width: 160px;
+        height: 200px;
+    }
+    .artist-info h1 {
+        font-size: 1.6rem;
+    }
+    .artist-info h4 {
+        font-size: 1rem;
+    }
+    .artist-info p {
+        font-size: 0.9rem;
+    }
+    .social-card {
+        width: 70px;
+        padding: 10px;
+    }
+    .social-card i {
+        font-size: 22px;
+    }
+}
+
+
+/* ===== EXPO CARDS CORREGIDO ===== */
 #exposiciones.section {
-    margin-top: 0; /* eliminar margen superior */
-    padding-top: 20px; /* opcional, espacio interno */
+    margin-top: 0;
+    padding-top: 20px;
     padding-bottom: 60px;
 }
 
+/* CONTENEDOR DE ANIMACIÓN */
 .expo-card {
     perspective: 1200px;
     cursor: pointer;
@@ -167,10 +208,12 @@
     box-shadow: 0 5px 15px rgba(0,255,136,0.3);
 }
 
-.expo-card:hover .expo-inner {
+.expo-card:hover .expo-inner,
+.expo-card:active .expo-inner { /* también para touch */
     transform: rotateY(180deg);
 }
 
+/* FRENTE Y REVERSO */
 .expo-front, .expo-back {
     position: absolute;
     width: 100%;
@@ -220,4 +263,37 @@
     font-size: 1.1rem;
     margin-bottom: 10px;
     text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets grandes */
+@media(max-width: 991px){
+    .expo-inner {
+        height: 320px;
+    }
+    .expo-front img {
+        height: 180px;
+    }
+    .expo-back {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+}
+
+/* Móviles pequeños */
+@media(max-width: 576px){
+    .expo-inner {
+        height: 280px;
+    }
+    .expo-front img {
+        height: 140px;
+    }
+    .expo-front h5 {
+        font-size: 1rem;
+    }
+    .expo-back {
+        font-size: 0.8rem;
+        padding: 12px;
+    }
 }
